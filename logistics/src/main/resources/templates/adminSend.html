@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(~{::title})">
+    <title>物流管理系统</title>
+</head>
+
+<body class="layui-layout-body">
+
+<div class="layui-layout layui-layout-admin">
+    <!--头部导航栏-->
+    <div th:replace="fragments :: topMenu"></div>
+
+    <!--侧边导航栏-->
+    <div th:if="${session.user.role==1}">
+        <div th:replace="fragments :: sideMenu(7)"></div>
+    </div>
+    <div th:if="${session.user.role==0}">
+        <div  th:replace="fragments :: sideMenuAdmin(7)"></div>
+    </div>
+
+    <!--中间内容-->
+    <div class="layui-body">
+        <div class="layui-tab" lay-filter="demo" lay-allowClose="true">
+            <!--tab页主体内容区域-->
+            <div class="layui-tab-content">
+                <div>
+                    <h2 class="ui dividing header">寄件管理</h2>
+                    <div class="ui secondary segment form" style="height: 68px;">
+                        <form class="inline fields" th:action="@{/searchPost}" method="post">
+                            <div class="field">
+                                <input type="text" name="num" placeholder="订单编号">
+                            </div>
+                            <div class="field">
+                                <!--dropdown是下拉框效果-->
+                                <div class="ui labeled action input">
+                                    <div class="ui type selection dropdown">
+                                        <input type="hidden" name="categoryId">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">分类</div>
+                                        <!--menu是菜单-->
+                                        <div class="menu">
+                                            <div th:each="category : ${categoryList}" th:data-value="${category.id}"
+                                                 th:text="${category.cname}" class="item">普通物品
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <!--dropdown是下拉框效果-->
+                                <div class="ui labeled action input">
+                                    <div class="ui type selection dropdown">
+                                        <input type="hidden" name="status">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">状态</div>
+                                        <!--menu是菜单-->
+                                        <div class="menu">
+                                            <div class="item" data-value="0">未寄出
+                                            </div>
+                                            <div class="item" data-value="1">已寄出
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <button type="submit" class="ui mini teal basic button"><i
+                                        class="search icon"></i>搜索
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <table class="ui teal table">
+                        <thead>
+                        <tr>
+                            <th>订单编号</th>
+                            <th>收件人</th>
+                            <th>订单重量(kg)</th>
+                            <th>快递种类</th>
+                            <th>订单时间</th>
+                            <th>订单状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="post : ${postList}">
+                            <td><a th:text="${post.num}" th:href="@{/toPostDetail/{id}(id=${post.id})}">2021050417405212</a></td>
+                            <td th:text="${post.consignee}">Approved</td>
+                            <td th:text="${post.weight}">12</td>
+                            <td th:text="${post.category.cname}">普通快递</td>
+                            <td th:text="${#dates.format(post.updateTime,'yyyy-MM-dd')}">2021-05-04 17:41</td>
+                            <td th:if="${post.status==0}" style="color: red">未寄出</td>
+                            <td th:if="${post.status==1}">已寄出</td>
+                            <td th:if="${post.status==0}">
+                                <a th:href="@{/adminSendPost/{id}(id=${post.id})}">
+                                    <button class="ui teal button">寄出</button>
+                                </a>
+                            </td>
+                            <td th:if="${post.status==1}">
+                                <button class="ui disabled button">快递已寄出,不能再进行操作</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th colspan="7">
+                                <div class="ui mini pagination menu">
+                                    <div class="item"><a
+                                            th:href="@{/toAdminSend(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a>
+                                    </div>
+                                    <div class="item"><a
+                                            th:href="@{/toAdminSend(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="ui segment m-inline-block">
+                        <p>当前第<span th:text="${pageInfo.pageNum}">1</span>页，总<span
+                                th:text="${pageInfo.pages}">20</span>页，共<span
+                                th:text="${pageInfo.total}">321</span>条记录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div th:replace="fragments :: footer"></div>
+</div>
+</body>
+
+<!--导入的script-->
+<th:block th:replace="fragments :: script">
+</th:block>
+<!--下拉菜单-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    $('select.dropdown')
+        .dropdown()
+    ;
+</script>
+</html>

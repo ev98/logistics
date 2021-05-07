@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(~{::title})">
+    <title>物流管理系统</title>
+</head>
+
+<body class="layui-layout-body">
+
+<div class="layui-layout layui-layout-admin">
+    <!--头部导航栏-->
+    <div th:replace="fragments :: topMenu"></div>
+
+    <!--侧边导航栏-->
+    <div th:if="${session.user.role==1}">
+        <div th:replace="fragments :: sideMenu(6)"></div>
+    </div>
+    <div th:if="${session.user.role==0}">
+        <div  th:replace="fragments :: sideMenuAdmin(6)"></div>
+    </div>
+
+    <!--中间内容-->
+    <div class="layui-body">
+        <div class="layui-tab" lay-filter="demo" lay-allowClose="true">
+            <!--tab页主体内容区域-->
+            <div class="layui-tab-content">
+                <div>
+                    <h2 class="ui dividing header">收件管理</h2>
+                    <form th:action="@{/adminPickUpOrders}" class="ui large form" method="post">
+                        <div class="field">
+                            <label>收件人</label>
+                            <input type="text" name="name" placeholder="姓名">
+                        </div>
+                        <div class="field">
+                            <label>存放位置</label>
+                            <!--dropdown是下拉框效果-->
+                            <div class="ui labeled action input">
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="positionId">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">位置</div>
+                                    <!--menu是菜单-->
+                                    <div class="menu">
+                                        <div th:each="position : ${positionList}" th:data-value="${position.id}"
+                                             th:text="${position.locker}" class="item">普通物品
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="ui teal button" type="submit">提交</button>
+                        <div class="ui error message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div th:replace="fragments :: footer"></div>
+</div>
+</body>
+
+<!--导入的script-->
+<th:block th:replace="fragments :: script">
+</th:block>
+<!--下拉菜单-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    $('select.dropdown')
+        .dropdown()
+    ;
+</script>
+</html>

@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    username: root
+    password: a1301493116
+    url: jdbc:mysql:///logistics?serverTimezone=GMT%2B8&characterEncoding=utf-8&useUnicode=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+
+mybatis-plus:
+  #扫描sql映射文件文件
+  mapper-locations: classpath:/mapper/*.xml
+  #主键自增
+  global-config:
+    db-config:
+      id-type: auto
+
+pagehelper:                #分页插件
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params:
+
+logging:
+  level:
+    com.ev.logistics: debug

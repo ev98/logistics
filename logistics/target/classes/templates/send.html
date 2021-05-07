@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(~{::title})">
+    <title>物流管理系统</title>
+</head>
+
+<body class="layui-layout-body">
+
+<div class="layui-layout layui-layout-admin">
+    <!--头部导航栏-->
+    <div th:replace="fragments :: topMenu"></div>
+
+    <!--侧边导航栏-->
+    <div th:if="${session.user.role==1}">
+        <div th:replace="fragments :: sideMenu(2)"></div>
+    </div>
+    <div th:if="${session.user.role==0}">
+        <div  th:replace="fragments :: sideMenuAdmin(2)"></div>
+    </div>
+
+    <!--中间内容-->
+    <div class="layui-body">
+        <div class="layui-tab" lay-filter="demo" lay-allowClose="true">
+            <!--tab页主体内容区域-->
+            <div class="layui-tab-content">
+                <div>
+                    <h2 class="ui dividing header">我要寄件</h2>
+                    <form th:action="@{/sendPost}" class="ui large form" method="post">
+                        <div class="field">
+                            <label>收件人</label>
+                            <input type="text" name="consignee" placeholder="姓名">
+                        </div>
+                        <div class="field">
+                            <label>收件人联系方式</label>
+                            <input type="text" name="consigneePhone" placeholder="手机号">
+                        </div>
+                        <div class="field">
+                            <label>收件人地址</label>
+                            <input type="text" name="consigneeAddress" placeholder="地址">
+                        </div>
+                        <div class="field">
+                            <label>快递种类</label>
+                            <select class="ui search dropdown" name="categoryId">
+                                <option value="1" selected="">普通物品</option>
+                                <option value="2">大件物品</option>
+                                <option value="3">贵重物品</option>
+                                <option value="4">易碎物品</option>
+                                <option value="5">生鲜</option>
+                                <option value="6">活物</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>快递预估重量</label>
+                            <input type="text" name="weight" placeholder="0.00 kg">
+                        </div>
+                        <button class="ui teal button" type="submit">提交</button>
+                        <div class="ui error message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div th:replace="fragments :: footer"></div>
+</div>
+</body>
+
+<!--导入的script-->
+<th:block th:replace="fragments :: script">
+</th:block>
+<script type="text/javascript" th:src="@{/js/user/send.js}"></script>
+<!--下拉菜单-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    $('select.dropdown')
+        .dropdown()
+    ;
+</script>
+</html>

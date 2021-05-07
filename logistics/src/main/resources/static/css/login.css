@@ -1,0 +1,174 @@
+body
+{
+	background-image:url(../images/bg.png);
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	font-family: sans-serif;
+}
+.header
+{
+	position: absolute;
+	top:10%;
+	left: 20%;
+	margin: auto;
+	margin-top:100px ;
+	width: 400px;
+	color: #F5F5F5;
+	}
+.header h1{
+	font-size: 54px;
+	font-weight: normal;
+}
+.header h2{
+	font-size: 3rem;
+	font-weight: lighter;
+}
+.box
+{
+	position: absolute;
+	top: 40%;
+	left: 70%;
+	transform: translate(-50%,-50%);
+	margin: auto;
+	margin-top: 100px;
+	width: 400px;
+	background-color: rgba(255,255,255,.8);
+	padding: 40px;
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(255,255,255,.5);
+	border-radius: 10px;
+}
+.box h2
+{
+	margin: 0 0 30px;
+	padding: 0;
+	color:#000000;
+	text-align: center;
+}
+.input-box
+{
+	position: relative;
+}
+.input-box input
+{
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #000000;
+	margin-bottom: 30px;
+	border: none;
+	outline: none;
+	background: transparent;
+	border-bottom: solid 1px #174c81;
+}
+.input-box label
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #a2acbd;
+	pointer-events: none;
+	transition: .5s;
+}
+.input-box p{
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0 0;
+	font-size: 12px;
+	
+}
+.input-box input:focus~label,
+.input-box input:valid~label
+{
+	top: -20px;
+	left: 0;
+	color: #174c81;
+	font-size: 12px;
+}
+.box input[type="submit"]
+{
+	background: transparent;
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #000000;
+	padding: 10px 20px;
+	background-color: #174c81;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.box input[type="submit"]:focus
+{
+	box-shadow: 0 15px 25px rgba(255,255,255,.5);
+	font-size: 12px;
+}
+.box a{
+	text-decoration: none;
+	color:#A2A2A2;
+	font-size: 14px;
+}
+.box a:hover
+{
+	color: #174c81;
+}
+.box input[type="button"]
+{
+	background: transparent;
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #000000;
+	padding: 10px 20px;
+	background-color: orange;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.box input[type="button"]:focus
+{
+	box-shadow: 0 15px 25px rgba(255,255,255,.5);
+	font-size: 12px;
+}
+.left-tool
+{
+	position: fixed;
+	bottom: 70px;
+	left: 0;
+	z-index: 99;
+	display: block;
+	width: 84px;
+	height: 252px;
+	background-color: #F5F5F5;
+	text-align: center;
+	line-height: 90px;
+}
+.left-tool a
+{
+	display: block;
+	width: 82px;
+	height: 90px;
+	position: relative;
+	margin-top: -1px;
+	background-color: #FFFFFF;
+	border: solid 1px #F5F5F5;
+	font-size: 14px;
+	text-decoration: none;
+	color: #000000;
+}
+.left-tool a:hover
+{
+	color: #174c81;
+}
+
+.font {
+	font-family: 'YouYuan';
+}
+

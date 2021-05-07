@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da734ecd-431d-48a4-8a70-97f6ab5bf5b5" name="默认更改列表" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\GONGJU\maven\maven_repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\GONGJU\maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rtCnqJVD5kCYZytILI3y89JF1Q" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GONGJU\IDEA\code\logistics\src\main\resources\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GONGJU\IDEA\code\logistics\src\main\resources\static\images" />
+      <recent name="D:\GONGJU\IDEA\code\logistics\src\main\resources\templates\error" />
+      <recent name="D:\GONGJU\IDEA\code\logistics\src\main\resources\templates" />
+      <recent name="D:\GONGJU\IDEA\code\logistics\src\main\resources\static\js\user" />
+      <recent name="D:\GONGJU\IDEA\code\logistics\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ev.logistics.controller" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ev.logistics.entity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="LogisticsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="logistics" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ev.logistics.LogisticsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\13014\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da734ecd-431d-48a4-8a70-97f6ab5bf5b5" name="默认更改列表" comment="" />
+      <created>1619786168942</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619786168942</updated>
+      <workItem from="1619786173431" duration="2561000" />
+      <workItem from="1620024974510" duration="4515000" />
+      <workItem from="1620045012957" duration="1569000" />
+      <workItem from="1620049566430" duration="6793000" />
+      <workItem from="1620057217753" duration="891000" />
+      <workItem from="1620097851120" duration="6475000" />
+      <workItem from="1620123141527" duration="3870000" />
+      <workItem from="1620140122731" duration="13711000" />
+      <workItem from="1620210675725" duration="256000" />
+      <workItem from="1620210950238" duration="91000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1620152262300">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="116" key="#com.intellij.ide.util.MemberChooser/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620152262300" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620048760619">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620048760619" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1620210854667">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620210854667" />
+    <state width="1493" height="384" key="GridCell.Tab.0.bottom" timestamp="1620211042587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.0.bottom/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042587" />
+    <state width="1493" height="384" key="GridCell.Tab.0.center" timestamp="1620211042586">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.0.center/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042586" />
+    <state width="1493" height="384" key="GridCell.Tab.0.left" timestamp="1620211042586">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.0.left/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042586" />
+    <state width="1493" height="384" key="GridCell.Tab.0.right" timestamp="1620211042587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.0.right/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042587" />
+    <state width="1493" height="384" key="GridCell.Tab.1.bottom" timestamp="1620211042587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.1.bottom/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042587" />
+    <state width="1493" height="384" key="GridCell.Tab.1.center" timestamp="1620211042587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.1.center/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042587" />
+    <state width="1493" height="384" key="GridCell.Tab.1.left" timestamp="1620211042587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.1.left/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042587" />
+    <state width="1493" height="384" key="GridCell.Tab.1.right" timestamp="1620211042587">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="384" key="GridCell.Tab.1.right/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620211042587" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1620150766794">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1620150766794" />
+  </component>
+</project>

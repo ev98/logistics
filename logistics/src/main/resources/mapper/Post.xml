@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ev.logistics.dao.PostDao">
+
+    <resultMap id="post" type="com.ev.logistics.entity.Post">
+        <id property="id" column="id"/>
+        <result property="num" column="num"/>
+        <result property="consignee" column="consignee"/>
+        <result property="consigneePhone" column="consignee_phone"/>
+        <result property="consigneeAddress" column="consignee_address"/>
+        <result property="weight" column="weight"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="status" column="status"/>
+        <result property="userId" column="user_id"/>
+        <result property="categoryId" column="category_id"/>
+
+        <association property="user" javaType="com.ev.logistics.entity.User">
+            <id property="id" column="id"/>
+            <result property="name" column="name"/>
+            <result property="username" column="username"/>
+            <result property="password" column="password"/>
+            <result property="phone" column="phone"/>
+            <result property="email" column="email"/>
+            <result property="avatar" column="avatar"/>
+            <result property="role" column="role"/>
+            <result property="createTime" column="create_time"/>
+        </association>
+        <association property="category" javaType="com.ev.logistics.entity.Category">
+            <id property="id" column="id"/>
+            <result property="cname" column="cname"/>
+        </association>
+    </resultMap>
+
+    <select id="findPostBySearch" resultMap="post">
+        SELECT *
+        FROM post p,user u,category c
+        <where>
+            <if test="1 == 1">
+                p.user_id=u.id AND p.category_id=c.id
+            </if>
+            <if test="num !=null and num != ''">
+                and p.num = #{num}
+            </if>
+            <if test="categoryId != null and categoryId != ''">
+                and p.category_id = #{categoryId}
+            </if>
+            <if test="status != null">
+                and p.status = #{status}
+            </if>
+        </where>
+        ORDER BY p.`update_time` DESC
+    </select>
+
+    <update id="updatePostStatusTo1">
+        update post set status=1,update_time=#{date} where id=#{id}
+    </update>
+
+    <select id="findByUserId" resultMap="post">
+        SELECT *
+        FROM post p,user u,category c
+        WHERE p.user_id=u.id AND p.category_id=c.id AND p.user_id=#{id} ORDER BY p.`update_time` DESC
+    </select>
+
+    <select id="findById" resultMap="post">
+        SELECT *
+        FROM post p,user u,category c
+        WHERE p.user_id=u.id AND p.category_id=c.id AND p.id=#{id}
+    </select>
+
+</mapper>

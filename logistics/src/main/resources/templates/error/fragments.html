@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head(title)">  <!--title为传参-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">物流管理系统</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" th:href="@{/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+</head>
+<body>
+
+<!-- 顶部区域 -->
+<div class="layui-header" th:fragment="topMenu">
+    <a th:href="@{/index}" data-tooltip="返回首页">
+        <div class="layui-logo" style="font-size: 20px;">校园物流管理系统</div>
+    </a>
+    <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item" th:if="${#lists.isEmpty(session.user)}">
+            <a th:href="@{/toLogin}">
+                登录
+            </a>
+        </li>
+        <li class="layui-nav-item" th:unless="${#lists.isEmpty(session.user)}">
+            <a href="javascript:;">
+                <img th:src="${session.user.avatar}"
+                     onerror="this.src='/images/avatar1.jpg'" class="layui-nav-img">
+                <span th:text="${session.user.name}">金</span>
+            </a>
+            <dl class="layui-nav-child">
+                <dd>
+                    <a th:href="@{toUserInfo}" class="site-demo-active">
+                        个人信息
+                    </a>
+                </dd>
+                <dd>
+                    <a th:href="@{/logout}">
+                        注销
+                    </a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+
+<!-- 侧边栏1 -->
+<div class="layui-tab  layui-side layui-tab-card site-demo-button" th:fragment="sideMenuAdmin(n)">
+    <ul class="layui-nav layui-side layui-nav-tree layui-nav-side">
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">我的物流</a>
+            <dl class="layui-nav-child">
+                <dd th:classappend="${n==1}?'layui-this'">
+                    <a th:href="@{toPickUp}" class="site-demo-active">
+                        我要收件
+                    </a>
+                </dd>
+                <dd th:classappend="${n==2}?'layui-this'">
+                    <a th:href="@{toSend}" class="site-demo-active">
+                        我要寄件
+                    </a>
+                </dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">个人管理</a>
+            <dl class="layui-nav-child">
+                <dd th:classappend="${n==3}?'layui-this'">
+                    <a th:href="@{toUserInfo}" class="site-demo-active">
+                        个人信息
+                    </a>
+                </dd>
+                <dd th:classappend="${n==4}?'layui-this'">
+                    <a th:href="@{toUserPickUp}" class="site-demo-active">
+                        我收到的
+                    </a>
+                </dd>
+                <dd th:classappend="${n==5}?'layui-this'">
+                    <a th:href="@{toUserSend}" class="site-demo-active">
+                        我寄出的
+                    </a>
+                </dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">物流管理</a>
+            <dl class="layui-nav-child">
+                <dd th:classappend="${n==6}?'layui-this'">
+                    <a th:href="@{toAdminPickUp}" class="site-demo-active">
+                        收件管理
+                    </a>
+                </dd>
+                <dd th:classappend="${n==7}?'layui-this'">
+                    <a th:href="@{toAdminSend}" class="site-demo-active">
+                        寄件管理
+                    </a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!-- 侧边栏2 -->
+<div class="layui-tab  layui-side layui-tab-card site-demo-button" th:fragment="sideMenu(n)">
+    <ul class="layui-nav layui-side layui-nav-tree layui-nav-side">
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">我的物流</a>
+            <dl class="layui-nav-child">
+                <dd th:classappend="${n==1}?'layui-this'">
+                    <a th:href="@{toPickUp}" class="site-demo-active">
+                        我要收件
+                    </a>
+                </dd>
+                <dd th:classappend="${n==2}?'layui-this'">
+                    <a th:href="@{toSend}" class="site-demo-active">
+                        我要寄件
+                    </a>
+                </dd>
+            </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">个人管理</a>
+            <dl class="layui-nav-child">
+                <dd th:classappend="${n==3}?'layui-this'">
+                    <a th:href="@{toUserInfo}" class="site-demo-active">
+                        个人信息
+                    </a>
+                </dd>
+                <dd th:classappend="${n==4}?'layui-this'">
+                    <a th:href="@{toUserPickUp}" class="site-demo-active">
+                        我收到的
+                    </a>
+                </dd>
+                <dd th:classappend="${n==5}?'layui-this'">
+                    <a th:href="@{toUserSend}" class="site-demo-active">
+                        我寄出的
+                    </a>
+                </dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+
+<!-- 底部固定区域 -->
+<div class="layui-footer" th:fragment="footer">
+    © 华北水利水电大学校园物流管理系统
+</div>
+
+
+<!--js-->
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script type="application/javascript" th:src="@{/js/layui.js}"></script>
+    <script th:src="@{/js/user/general.js}"></script>
+</th:block>
+
+</body>
+</html>

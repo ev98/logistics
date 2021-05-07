@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册账号</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="font">闲置，非旧货</h1>
+        <h1 class="font">置换，新生活</h1>
+    </div>
+    <div class="box">
+        <h2>欢迎注册</h2>
+        <form th:action="@{/register}" id="su" method="post" onsubmit="return check()">
+            <div class="input-box">
+                <input type="text" name="username" required="" id="username" />
+                <label>请输入账号(不可修改)</label>
+                <p class="tip"></p>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" required="" id="password" />
+                <label>请输入密码</label>
+                <p class="tip"></p>
+            </div>
+            <div class="input-box">
+                <input type="text" name="name" required="" id="nickname" />
+                <label>请输入用户名</label>
+                <p class="tip"></p>
+            </div>
+            <div class="input-box">
+                <input type="text" name="phone" required="" id="phone" />
+                <label>请输入手机号</label>
+                <p class="tip"></p>
+            </div>
+            <div class="input-box">
+                <input type="text" name="email" required="" id="email" />
+                <label>请输入邮箱</label>
+                <p class="tip"></p>
+            </div>
+            <input type="submit" id="submit" value="注册" />
+        </form>
+        <p align="center"><a th:href="@{/toLogin}">已有账号，立即登陆</a></p>
+    </div>
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script th:src="@{/js/user/register.js}"></script>
+
+</html>

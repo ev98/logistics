@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(~{::title})">
+    <title>物流管理系统</title>
+</head>
+
+<body class="layui-layout-body">
+
+<div class="layui-layout layui-layout-admin">
+    <!--头部导航栏-->
+    <div th:replace="fragments :: topMenu"></div>
+
+    <!--侧边导航栏-->
+    <div th:if="${session.user.role==1}">
+        <div th:replace="fragments :: sideMenu(0)"></div>
+    </div>
+    <div th:if="${session.user.role==0}">
+        <div th:replace="fragments :: sideMenuAdmin(0)"></div>
+    </div>
+
+    <!--中间内容-->
+    <div class="layui-body">
+        <div class="layui-tab" lay-filter="demo" lay-allowClose="true">
+            <!--tab页主体内容区域-->
+            <div class="layui-tab-content">
+                <div>
+                    <h2>error</h2>
+                    <p>对不起，服务器异常</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div th:replace="fragments :: footer"></div>
+</div>
+</body>
+
+<!--导入的script-->
+<th:block th:replace="fragments :: script">
+</th:block>
+
+</html>
